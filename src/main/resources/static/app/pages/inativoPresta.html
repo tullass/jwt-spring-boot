@@ -1,0 +1,47 @@
+<br>
+<br>
+<body>
+	<div class="tab-content">
+		<h2>Prestacao de Servicos Inativos</h2>
+		<br>
+		<br> <input type="search" ng-model="search.nome"
+			class="form-control" placeholder="filter Contratos..."
+			aria-label="filter Contratos" /> <br>
+		<table ng-table="talentPoolList" show-filter="true"
+			class="table table-hover">
+			<tr>
+				<th>Id</th>
+
+				<th>Nome</th>
+				<th>Apelido</th>
+
+				<th>Departamento</th>
+				<th>Supervisor</th>
+				<th>Motivo</th>
+				<th>Data</th>
+
+				<th>Verificar</th>
+
+
+			</tr>
+			<tr ng-repeat="contrato in listaa | filter:search:strict">
+				<td>{{contrato.id}}</td>
+
+				<td>{{contrato.nome}}</td>
+				<td>{{contrato.apelido}}</td>
+				<td>{{contrato.departamento.descricao}}</td>
+				<td>{{contrato.supervisor.descricao}}</td>
+				<td>{{contrato.motivo}}</td>
+				<td>{{contrato.calendar | date: 'dd MMMM yyyy'}}</td>
+
+
+				<td><button type="button" ng-click="alterar()"
+						class="btn btn-success m-b-sm" data-toggle="modal"
+						data-target="#myModal">Activar</button></td>
+
+			</tr>
+		</table>
+		<br> <br>
+
+	</div>
+</body>

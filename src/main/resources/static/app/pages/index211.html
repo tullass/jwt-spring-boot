@@ -1,0 +1,100 @@
+
+
+<body>
+	<br>
+	<div class="tab-content">
+		<h3>Pesquisa por Datas</h3>
+		<br> <br>
+<div>
+fromDate: <datepicker date-format="dd/MM/yyyy"><input ng-model="from_date" type="text"/></datepicker>     
+</div>            
+<div>
+toDate: <datepicker date-format="dd/MM/yyyy"><input ng-model="to_date" type="text"/></datepicker>  
+		<div class="row">
+			<div class="form-group col-md-2">
+				<label for="exampleInputName">De:</label> <input type="text"
+					class="form-control" data-ng-model="de">
+			</div>
+			<div class="form-group  col-md-2">
+				<label for="exampleInputName2">Ate:</label> <input type="text"
+					class="form-control" placeholder="Apelido" data-ng-model="ate">
+			</div>
+			<div class="form-group  col-md-2">
+
+				<label>Pronvicia: <select
+					data-ng-model="search.endereco.provincia" class="form-control">
+						<option data-ng-repeat="p in pronviciass">{{p}}</option>
+				</select></label>
+			</div>
+			<div>
+			<input type="button" ng-click="exportToPdf()" class="btn btn-danger"
+					value="PDF" />  
+					<label><input type="button"
+					ng-click="limpar()" class="btn btn-success"
+					value="Limpar Pesquisa" /> </label>
+
+			</div>
+
+		</div>
+		<br>
+		<h5>Prestacao de Servico</h5>
+		<br> <br /> <label>Imprimir<input type="checkbox"
+			ng-model="t"><br></label>
+		<table border="1" id="customers"
+			class="table table-stripped table-bordered table-hover">
+			<thead ng-show="t">
+				<tr>
+					<td colspan="18" style="text-align: left"><img
+						src="app/imgs/jhpiegoMin.png" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="8" style="text-align: right"><h5>Doc.No.:
+							{{d| date: 'ddMMyymm:ss'}}</h5></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="8" style="text-align: right"><h5>Data: {{d|
+							date: 'dd MMMM yyyy HH:mm:ss'}}</h5></td>
+				</tr>
+				<tr>
+					<td><br> <br> <br> <br> <br> <br>
+						<br></td>
+					<td colspan="4" style="text-align: center;"><h3>Prestacao de Servico</h3></td>
+				</tr>
+			</thead>
+			<thead>
+			<thead>	<tr>
+
+					<th>Nome</th>
+					<th>Genero</th>
+					<th>Provincia</th>
+
+					<th>Posiccao</th>
+					<th>Data inicio</th>
+					<th>Data fim</th>
+					<th>Departamento</th>
+					<th>Supervisor</th>
+
+
+
+				</tr>
+			</thead>
+
+			<tbody>
+			<tr ng-repeat="p in record | dateRange:from_date:to_date">
+					<td>{{p.nome}}</td>
+					<td>{{p.genero}}</td>
+					<td>{{p.endereco.provincia}}</td>
+
+					<td>{{p.posicao.descricao}}</td>
+					<th>{{p.datainicio | date: 'dd MMMM yyyy'}}</th>
+
+					<th>{{p.datafim | date: 'dd MMMM yyyy'}}</th>
+					<td>{{p.departamento.descricao}}</td>
+					<td>{{p.supervisor.descricao}}</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+</body>{{record}}

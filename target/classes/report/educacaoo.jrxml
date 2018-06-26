@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.1.final using JasperReports Library version 6.0.0  -->
+<!-- 2018-03-03T16:31:50 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="educacaoo" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="63051d0f-8a3b-4e02-aa8f-7b4046345017">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="dGVzdGV6dGUuZWR1Y2FjYW8gQVMgLDIyMCw3ODt0ZXN0ZXp0ZS5jb250cmF0byBBUyAsMywxODs="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<parameter name="whereParam" class="java.lang.Long">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="id" class="java.lang.Long"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT testezte.contrato.id,
+	testezte.contrato.apelido,
+	testezte.educacao.descricao,
+	testezte.contrato.nome,
+	testezte.endereco.bairro,
+	testezte.endereco.nacionalidade
+FROM testezte.contrato
+	INNER JOIN testezte.educacao ON 
+	 testezte.contrato.educacao_id = testezte.educacao.id 
+	INNER JOIN testezte.endereco ON 
+	 testezte.contrato.endereco_id = testezte.endereco.id 
+WHERE 
+	 testezte.contrato.id = $P{id} ]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apelido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descricao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bairro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nacionalidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="210" y="40" width="100" height="30" uuid="6d42616f-6137-45f2-aa43-e5a8b9214c5a"/>
+				<box topPadding="1" leftPadding="2">
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Relatorios]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="110" y="40" width="100" height="30" uuid="f0ce9278-7c09-4346-b4dd-a2f63cd61ddd"/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="40" width="100" height="30" uuid="9091afad-d69c-4a4f-a26d-e5cfa3cc1321"/>
+				<text><![CDATA[apelido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="40" width="100" height="30" uuid="0f5ffd89-be30-4891-a5bf-acd51ccc85a4"/>
+				<text><![CDATA[nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="100" height="30" uuid="f548fc25-7c40-4e05-919d-d200bb75735b"/>
+				<text><![CDATA[descricao]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="40" width="100" height="30" uuid="a1ecbc5b-f0ed-4da3-b387-cec0e70a3806"/>
+				<text><![CDATA[nacionalidade]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="160" splitType="Stretch">
+			<textField>
+				<reportElement x="110" y="10" width="100" height="30" uuid="adf31776-1339-466b-a104-92c53020be05"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="10" width="100" height="30" uuid="ba2f0c3a-c394-4e8d-911d-eccc002b5039"/>
+				<textFieldExpression><![CDATA[$F{apelido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="10" width="100" height="30" uuid="a5fe19c6-ce2e-43ea-a35b-a2e4a178cb79"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="10" width="100" height="30" uuid="83aabd46-2b2e-47b3-9eda-d0b99a4c26fa"/>
+				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="10" width="100" height="30" uuid="7e356236-aefc-4aa9-8d28-966a09350683"/>
+				<textFieldExpression><![CDATA[$F{nacionalidade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

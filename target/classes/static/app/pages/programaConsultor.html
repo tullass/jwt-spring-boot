@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<h2 style="text-align: center">Programas</h2>	
+	
+	<h3 style="text-align: center">Contrato Consultor</h3>
+	<br>
+	<br>
+	<div ng-hide="loading">
+		<div class="row">
+			
+			<div class="form-group col-md-2">
+				<label>Name only <input type="search" ng-model="search.nome"
+					placeholder="Pesquise pelo nome..." class="form-control"
+					aria-label="Pesquise pelo nome"></label>
+			</div>
+		</div>
+		<label><input type="button" ng-click="exportToPdf()"
+			class="btn btn-danger" value="PDF" /> </label> <label><input
+			type="button" ng-click="limpar(search)" class="btn btn-success"
+			value="Limpar Pesquisa" /> </label>
+
+
+	</div>
+
+	<br>
+	<div class="spinner" ng-show="loading" align="center">
+		<img src="app/imgs/jhpiegoMin.png" alt="Yükleniyor..." /> <br>
+		<img src="app/imgs/load.gif" alt="Yükleniysor..." />
+	</div>
+	<br>
+	<div ng-hide="loading">
+
+		<br /> <br /> <label>Imprimir<input type="checkbox"
+			ng-model="t"><br></label><div style="text-align:right">
+			<div >
+		<label>Itens per Page<select ng-model="pageNumber">
+		<option data-ng-repeat="fatura in prestacao" value="{{fatura.pageNumber}}">{{fatura.nome}}</option>
+	</select></label>	
+		
+		</div></div>
+		<table id="customers" class="table table-hover">
+			<thead ng-show="t">
+				<tr>
+					<td colspan="18" style="text-align: left"><img
+						src="app/imgs/jhpiegoMin.png" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="18" style="text-align: right"><h5>Doc.No.:
+							{{d| date: 'ddMMyymm:ss'}}</h5></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="18" style="text-align: right"><h5>Data: {{d|
+							date: 'dd MMMM yyyy HH:mm:ss'}}</h5></td>
+				</tr>
+				<tr>
+					<td><br> <br> <br> <br> <br> <br>
+						<br></td>
+					<td colspan="10" style="text-align: center;"><h3>Contrato
+							indeterminado Programas</h3></td>
+				</tr>
+			</thead>
+
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>DOD</th>
+					<th>%</th>
+					<th>CDC</th>
+					<th>%</th>
+
+					<th>MCP</th>
+					<th>%</th>
+					<th>Mozal</th>
+
+					<th>%</th>
+					<th>A_Free</th>
+					<th>%</th>
+					<th>TIP TOP</th>
+					<th>%</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr dir-paginate="item in items | itemsPerPage:pageNumber |  filter:search:strict">
+					<td>{{item.nome}}</td>
+					<td>{{item.programa.pdod}}</td>
+					<td>{{item.programa.p1}}</td>
+					<td>{{item.programa.pcdc}}</td>
+					<td>{{item.programa.p2}}</td>
+					<td>{{item.programa.pmcp}}</td>
+					<td>{{item.programa.p3}}</td>
+
+					<td>{{item.programa.pmozal}}</td>
+					<td>{{item.programa.p4}}</td>
+
+					<td>{{item.programa.paids}}</td>
+					<td>{{item.programa.p5}}</td>
+
+					<td>{{item.programa.ptip}}</td>
+					<td>{{item.programa.p6}}</td>
+				</tr>
+			</tbody>
+		</table><div class="row">
+
+			<div class="col-lg-12">
+
+				<dir-pagination-controls boundary-links="true" 
+					 auto-hide="true">
+					</dir-pagination-controls>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+
+</html>

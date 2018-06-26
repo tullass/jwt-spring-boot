@@ -1,0 +1,89 @@
+<br>
+<br>
+<body>
+	<div class="tab-content">
+		<input type="search" ng-model="search.nome"
+			placeholder="filter prestacaos..." aria-label="filter prestacaos" />
+		<br>
+		<h3>Desativar P.Servico</h3>
+		<table ng-table="talentPoolList" show-filter="true"
+			class="table table-hover">
+			<tr>
+				<th>Id</th>
+
+				<th>Nome</th>
+				<th>Apelido</th>
+
+				<th>Departamento</th>
+				<th>Supervisor</th>
+				<th>Verificar</th>
+
+
+			</tr>
+			<tr ng-repeat="prestacao in listaa | filter:search:strict">
+				<td>{{prestacao.id}}</td>
+
+				<td>{{prestacao.nome}}</td>
+				<td>{{prestacao.apelido}}</td>
+				<td>{{prestacao.departamento.descricao}}</td>
+				<td>{{prestacao.supervisor.descricao}}</td>
+
+				<td><button type="button" ng-click="alterar(prestacao)"
+						class="btn btn-danger m-b-sm" data-toggle="modal"
+						data-target="#myModal">Delete</button></td>
+
+			</tr>
+		</table>
+		<br> <br>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">Desativar
+							C.Indeterminado</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<div class="row">
+								<div>
+									<label for="exampleInputNome1">Nome:</label> <input type="text"
+										class="form-control" data-ng-model="prestacao.nome"
+										id="idInputNome1" readonly>
+								</div>
+								<br>
+								<div>
+									<label for="exampleInputTelefone1">Estado:</label> <input
+										type="checkbox" data-ng-model="prestacao.estado">
+									<div ng-hide="prestacao.estado">
+										<span>Desativo</span>
+									</div>
+								</div>
+								<br>
+								<div>
+									<label for="exampleInputNome1">Motivo:</label>
+									<textarea type="text" data-ng-model="prestacao.motivo"
+										placeholder="Escreva Motivo"></textarea>
+								</div>
+								<br>
+
+							</div>
+							<br> <br>
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Fechar</button>
+							<button type="button" ng-click="create(prestacao)"
+								class="btn btn-success" data-dismiss="modal">Confirmar</button>
+
+						</div>
+					</div>
+
+				</div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+</body>

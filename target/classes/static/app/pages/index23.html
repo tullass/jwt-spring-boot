@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Teste</title>
+<body>
+	<h1 style="color: red">Programa</h1>
+	<form>
+		<br> <br> <label>Descricao</label> <input type="text"
+			data-ng-model="programaa.descricao"> <br> <br> <br>
+		<button type="button" data-ng-click="create(programaa)"
+			class="btn btn-default">Create</button>
+		<br> <br>
+		<table border="1" class="table table-hover">
+			<tr>
+				<th>Descricao</th>
+				<th>Accoes</th>
+
+			</tr>
+			<tr data-ng-repeat="programaa in lista">
+				<td>{{programaa.descricao}}</td>
+
+				<td>
+					<button type="button" data-ng-click="alterar(programaa)">Alterar</button>
+					<!-- 					<button type="button" data-ng-click="deletar(programaa)">Excluir</button> -->
+				</td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

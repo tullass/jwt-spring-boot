@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Teste</title>
+<body>
+	<h1>contratoD</h1>
+	<form name="multiStepForm" ng-cloak>
+				<div class="animate-switch-container" ng-switch on="stage">
+	<div>
+					<div class="row">
+						<div class="col-md-12">
+							<button type="button" class="btn btn-primary"
+								ng-click="next('stage1')">Inicio</button>
+						</div>
+					</div>
+				</div>				<div ng-switch-when="stage1"><div class="row">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<div class="form-group">
+					<div ng-switch-when="stage1">				<h3>ghj</h3> <textarea ng-model="formParams.messageBody"></textarea>
+	<label>Nome</label> <input type="text" ng-model="contrato.nome">
+		<label>Apelido</label> <input type="text" ng-model="contrato.apelido">
+		<label>Estado Civil</label> <input type="text"
+			ng-model="contrato.civil"> <label>Experiencia</label> <input
+			type="text" ng-model="contrato.experiencia"> <label>Data
+			Fim</label> <input type="range" ng-model="contrato.datafim"> <label>Data
+			Inicio</label> <input type="date" ng-model="contrato.datainicio"> <label>Email</label>
+		<input type="text" ng-model="contrato.email"> <label>Genero</label>
+		<input type="radio" ng-model="contrato.genero" value="Masculino">
+		<input type="radio" ng-model="contrato.genero" value="Feminino">
+		<br> <label>Inss</label> <input type="text"
+			ng-model="contrato.inss"> <label>Intervalo</label> <input
+			type="text" ng-model="contrato.intervalo"> <label>Nib</label>
+		<input type="text" ng-model="contrato.nib"> <label>Salario
+			Actual</label> <input type="text" ng-model="contrato.salarioactual">
+		<label>Salario Base</label> <input type="text"
+			ng-model="contrato.salariobase"> <label>Telefone</label> <input
+			type="text" ng-model="contrato.telefone1"> <label>Telefone2</label>
+		<input type="text" ng-model="contrato.telefone2">    <button type="button" class="btn btn-info" ng-click="back('')">Back</button>
+          <button type="button" class="btn btn-primary" ng-click="next('stage2')">Next</button>
+        </div>
+        <div ng-switch-when="stage2">
+          <div class="form-group">
+            <label for="ta-body">Message Body:</label>
+            {{formParams.messageBody}}
+            {{contrato.nome}}
+
+          </div>
+          <button type="button" class="btn btn-info" ng-click="back('stage1')">Back</button>
+          <button type="button" class="btn btn-primary" ng-click="next('stage3')">Next</button>
+			<button type="button" class="btn btn default"
+						data-ng-click="create(contrato)">Create</button></div>
+				</div></div>
+	</form>
+</body>
+</html>

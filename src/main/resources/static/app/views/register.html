@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+ <body class="page-register login-alt">
+        <main class="page-content">
+            <div class="page-inner">
+                <div id="main-wrapper">
+                    <div class="row">
+                        <div class="col-md-6 center">
+                                <div class="panel-body">
+                                <p class="text-center"><img src="app/imgs/jhpiego.png"/></p></a>
+                                    
+                                            <form class="m-t-md" ng-submit="submit()" name="register" novalidate>
+                                                <div class="form-group" ng-class="{ 'has-error': register.name.$invalid && register.name.$dirty }">
+                                                    <input type="text" class="form-control" placeholder="Name" required  ng-model="appUser.name" id="name" name="name">
+                                                </div>
+                                                
+                                                <div class="form-group" ng-class="{ 'has-error': register.username.$invalid && register.username.$dirty }">
+													<input type="text" class="form-control" placeholder="Username" ng-model="appUser.username" id="username" name="username" required>
+												</div>
+                                                <div class="form-group" ng-class="{ 'has-error': register.password.$invalid && register.password.$dirty }">
+                                                    <input type="password" class="form-control" placeholder="Password" required class="form-control" id="pwd" ng-model="appUser.password" name="password">
+                                                </div>
+                                                <div class="form-group" ng-class="{ 'has-error': register.confirmPassword.$invalid && register.confirmPassword.$dirty }">
+                                                    <input type="password" class="form-control" placeholder="Confirmar Password" name="confirmPassword" required class="form-control" id="cpwd" ng-model="confirmPassword">
+                                                </div>
+                                                
+                                                <div class="alert alert-warning margin-top-5" ng-show="confirmPassword != appUser.password ">Password Not Matching</div>
+                                                
+                                                <button type="submit" class="btn btn-success btn-block"
+                                                ng-disabled="register.$invalid || (confirmPassword != appUser.password)">Registar</button>
+                                                <p class="text-center m-t-xs text-sm">Já tem conta?</p>
+                                                <a ui-sref="login" class="btn btn-default btn-block m-t-md">Login</a>
+                                                <div class="alert alert-info margin-top-5" ng-show="message">{{message}}</div><br>
+                                                <p class="text-center">Create by Marcos Posso 2018.</p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div><!-- Row -->
+        </main><!-- Page Content -->

@@ -1,0 +1,118 @@
+
+<form>
+<body>
+	<br>
+	<div class="tab-content">
+		<h3>Pesquisaa por Datas</h3>
+		<br> <br>
+		<div class="row">
+			<div class="form-group col-md-2">
+				<label for="exampleInputName">De:</label> <input type="text"
+					class="form-control" data-ng-model="de" >
+			</div>
+			<div class="form-group  col-md-2">
+				<label for="exampleInputName2">Ate:</label> <input type="text"
+					class="form-control"  data-ng-model="ate" disabled="disabled">
+			</div>
+			<div class="form-group  col-md-2">
+
+				<label>Pronvicia: <select
+					data-ng-model="search.endereco.provincia" class="form-control">
+						<option data-ng-repeat="p in pronviciass">{{p}}</option>
+				</select></label>
+			</div>
+			<div>
+			<input type="button" ng-click="exportToPdf()" class="btn btn-danger"
+					value="PDF" />  
+					<label><input type="button"
+					ng-click="limpar()" class="btn btn-success"
+					value="Limpar Pesquisa" /> </label>
+
+			</div>
+
+		</div>
+		<br>
+		<h5>Contrato Indeterminado</h5>
+		<br> <br /> <label>Imprimir<input type="checkbox"
+			ng-model="t"><br></label><div style="text-align:right">
+			<div >
+		<label>Itens per Page<select ng-model="pageNumber">
+		<option data-ng-repeat="fatura in prestacao" value="{{fatura.pageNumber}}">{{fatura.nome}}</option>
+	</select></label>	
+		
+		</div></div>
+		<table id="customers"
+			class="table table-stripped table-hover">
+			<thead ng-show="t">
+				<tr>
+					<td colspan="18" style="text-align: left"><img
+						src="app/imgs/jhpiegoMin.png" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="8" style="text-align: right"><h5>Doc.No.:
+							{{d| date: 'ddMMyymm:ss'}}</h5></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="8" style="text-align: right"><h5>Data: {{d|
+							date: 'dd MMMM yyyy HH:mm:ss'}}</h5></td>
+				</tr>
+				<tr>
+					<td><br> <br> <br> <br> <br> <br>
+						<br></td>
+					<td colspan="5" style="text-align: center;"><h3>Contrato
+							Indeterminado</h3></td>
+				</tr>
+			</thead>
+			<thead>
+			<thead>
+				<tr>
+
+					<th>Nome</th>
+					<th>Genero</th>
+					<th>Provincia</th>
+
+					<th>Posiccao</th>
+					<th>Data inicio</th>
+					<th>Data fim</th>
+					<th>Departamento</th>
+					<th>Supervisor</th>
+
+
+
+				</tr>
+			</thead>
+
+			<tbody>
+			
+			<tr dir-paginate="p in record | itemsPerPage:pageNumber  | filter:search:strict | dateRangerrr : de : ate">
+				
+					<td>{{p.nome}}</td>
+
+
+					<td>{{p.genero}}</td>
+					<td>{{p.endereco.provincia}}</td>
+
+					<td>{{p.posiccao.descricao}}</td>
+					<th>{{p.datainicio | date: 'yyyy-MM-dd'}}</th>
+
+					<th>{{p.datafim | date: 'yyyy-MM-dd'}}</th>
+					<td>{{p.departamento.descricao}}</td>
+					<td>{{p.supervisor.descricao}}</td>
+				</tr>
+			</tbody>
+		</table>
+<div class="row">
+
+			<div class="col-lg-12">
+
+				<dir-pagination-controls boundary-links="true" 
+					 auto-hide="true">
+					</dir-pagination-controls>
+			</div>
+
+		</div>
+	</div>
+</body>
+</form>

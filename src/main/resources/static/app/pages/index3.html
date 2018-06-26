@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Teste</title>
+<body ng-app="myApp">
+	<h1>Areaa Cientifica</h1>
+	<form>
+	<div ng-controller="areaaController">
+
+		<label>Descricao</label> <input type="text" ng-model="areaa.descricao" required="required">
+		<br>
+		<button type="button" data-ng-click="create(areaa)">Create</button>
+		<br>
+		<table border="1">
+			<tr>
+				<th>CodTurma</th>
+				<th>Descricao</th>
+				<th>Preco</th>
+
+			</tr>
+			<tr data-ng-repeat="areaa in lista">
+				<td>{{areaa.id}}</td>
+				<td>{{areaa.descricao}}</td>
+
+				<td>
+					<button type="button" data-ng-click="alterar(areaa)">Alterar</button>
+					<button type="button" data-ng-click="deletar(areaa)">Excluir</button>
+				</td>
+			</tr>
+		</table>
+</div>	</form>
+
+	<script src="./js/angular.min.js"></script>
+	<script src="./js/angular-resource.min.js"></script>
+
+	<script src="./js/app3.js"></script>
+</body>
+</html>

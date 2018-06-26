@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+
+</head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<p class="nav navbar-nav navbar-left">
+					<img src="app/imgs/jhpiegoMin.png" align="right" />
+				</p>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a ui-sref="home">Home</a></li>
+					<li class="dropdown"><a href="" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Contrato Indeterminado<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a ui-sref="cadContratoInde">Cadastrar</a></li>
+							<li><a ui-sref="periodoContratoIndetermnado">Periodo Probatorio</a></li>
+							<li role="separator" class="divider"></li>
+							<li role="separator" class="divider"></li>
+							<li><a ui-sref="index119">Programas</a></li>
+							<li><a ui-sref="geraisInder">Gerais</a></li>
+							<li><a ui-sref="datascontratoIndeter">Pesquisar Data</a></li>
+
+						</ul></li>
+					<li class="dropdown"><a href="" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Contrato P-Serviço<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a ui-sref="cadServico">Cadastrar</a></li>
+							<li><a ui-sref="index18">Alerta de Termino</a></li><li role="separator" class="divider"></li>
+							<li role="separator" class="divider"></li>
+						
+							<li><a ui-sref="index120">Relatorios</a></li>
+							<li><a ui-sref="index21">filtrar data</a></li>
+						</ul></li>
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Contrato Consultor<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a ui-sref="cadConsultor">Cadastrar</a></li>
+							<li><a ui-sref="periodoConsultorr">Período Probatório</a></li>
+							<li><a ui-sref="geralConsultor">Gerais</a></li>
+
+							<li><a ui-sref="programaConsultor">Programas</a></li>
+
+							<li><a ui-sref="datasConsultor">Filtrar Datas</a></li>
+						</ul></li>
+
+					<li><a ui-sref="add">Cadastros</a></li>
+
+					<li class="dropdown"><a href="" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Inativos<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a ui-sref="inativoIndeterminado">Contrato
+									Indeterminado</a></li>
+							<li><a ui-sref="inativoPresta">Contrato P-Serviço</a></li>
+							<li><a href="">Contrato Consultor</a></li>
+						</ul></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li ng-show="user.username"><a> <span class="user">Ola,
+								{{user.name}}</span> <span ng-click="logout()" href="" class="logout">Logout</span>
+					</a></li>
+					<li><a href="">Olá User</a></li>
+					<li class="dropdown"><a href="" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Configurações<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a ui-sref="index16">Desactivar C.Indeterminado</a></li>
+							<li><a ui-sref="apagarPresta">Desactivar C.P-Serviço</a></li>
+							<li><a href="">Desactivar C.Consultor</a></li>
+							<li><a ui-sref="users">Gerir Utilzador</a></li>
+
+						</ul></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+
+					<li ng-show="user.username"><a> <span>Ola,
+								{{user.name}}</span> <span ng-click="logout()">Logout</span>
+					</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+
+		</div>
+	</nav>
+
+	<div class="container"></div>
+
+</body>
+</html>

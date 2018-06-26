@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Teste</title>
+<body>
+	<h3>programa</h3>
+	<form>
+		<div class="row">
+			<div class="form-inline">
+
+				<div class="form-group col-md-3">
+					<label class="col-sm-2 control-label">DOD <input
+						type="text" ng-model="programa.pdod"></label>
+				
+			<br>
+		</div>
+		<button type="button" class="btn btn-success"
+			data-ng-click="create(programa)">Salvar</button>
+		<br>
+		<br>
+		<table ng-if="checked" class="table table-hover">
+			<tr>
+				<th>DOD</th>
+				<th>CDC</th>
+				<th>MCP</th>
+				<th>MOZAL</th>
+				<th>AIDS FREE</th>
+				<th>TIP TOP</th>
+				<th>Accoes</th>
+
+
+
+			</tr>
+			<tr data-ng-repeat="programa in lista">
+				<td>{{programa.pdod}}</td>
+				<td>{{programa.pcdc}}</td>
+				<td>{{programa.pmcp}}</td>
+				<td>{{programa.pmozal}}</td>
+				<td>{{programa.paids}}</td>
+				<td>{{programa.ptip}}</td>
+
+				<td>
+					<button type="button" class="btn btn-default"
+						data-ng-click="alterar(programa)">Alterar</button>
+					<button type="button" class="btn btn-danger"
+						data-ng-click="deletar(programa)">Excluir</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

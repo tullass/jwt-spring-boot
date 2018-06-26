@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-Title: jwt-spring-boot-security-angularjs
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: org.techforumist.jwt
+Build-Jdk: 1.7.0
+Built-By: Elton
+Created-By: Maven Integration for Eclipse
+Implementation-URL: http://projects.spring.io/spring-boot/jwt-spring-b
+ oot-security-angularjs/
+Main-Class: org.techforumist.jwt.JwtSpringBootSecurityAngularjsApplica
+ tion
+

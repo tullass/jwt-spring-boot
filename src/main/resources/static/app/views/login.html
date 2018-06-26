@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<body class="page-login">
+        <main class="page-content">
+            <div class="page-inner">
+                <div id="main-wrapper">
+                    <div class="row">
+                        <div class="col-md-3 center">
+                            <div class="login-box">
+                                <a href="index.html" class="logo-name text-lg text-center">
+								<p class="text-center"><img src="app/imgs/jhpiego.png"/></p></a>
+                                <form class="m-t-md" ng-submit="login()">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="username" id="username" placeholder="Username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control"  id="pwd" ng-model="password" placeholder="Password" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-block">Login</button>
+                                    <a href="register.html" class="btn btn-default btn-block m-t-md" ui-sref="register">Registar-se</a>
+                                    <a href="forgot.html" class="display-block text-center m-t-md text-sm">Esqueceu a password?</a>
+                                    
+                                    
+                                    <div class="alert alert-info margin-top-5" ng-show="message">{{message}}</div>
+                                </form>
+                                <p class="text-center m-t-xs text-sm">Create by Marcos Posso 2018.</p>
+                            </div>
+                        </div>
+                    </div><!-- Row -->
+                </div><!-- Main Wrapper -->
+            </div><!-- Page Inner -->
+        </main><!-- Page Content -->
+</body>        

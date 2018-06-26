@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Teste</title>
+
+</head>
+<body>
+	<h1>Contrato Indeterminado</h1>
+	<form  data-ng-switch on="stage"  name="multiStepForm" data-ng-cloak>
+				<div class="animate-switch-container">
+
+			<div class="tab-content">
+				<div data-ng-switch-default>
+					<div>
+						<h3>Dados Pessoais</h3>
+						<br>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputName">Nome:</label> <input type="text"
+									class="form-control" name="Name" id="idName" placeholder="Nome"
+									data-ng-model="contrato.nome">
+							</div>
+							<div class="form-group  col-md-4">
+								<label for="exampleInputName2">Apelido:</label> <input
+									type="text" class="form-control" name="Name2" id="idSurName2"
+									placeholder="Apelido" data-ng-model="contrato.apelido">
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputDate">Data de Nascimento:</label> <input
+									type="date" data-ng-model="contrato.datanascimento"
+									class="form-control" name="InputDate" id="idDate">
+							</div>
+							<div class="form-group col-md-4">
+								<label for="exampleInputAge">Anos/Idade:</label> <input
+									type="number" class="form-control" name="Age" id="idAge"
+									placeholder="Idade">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label>Estado Civil: <select
+									data-ng-model="contrato.civil" class="form-control">
+										<option data-ng-repeat="a in ecivil">{{a}}</option>
+								</select>
+								</label>
+							</div>
+							<div class="form-group col-md-4">
+								<label for="exmpleInputGender">Gênero:</label><br> <input
+									type="radio" data-ng-model="contrato.genero" id="idMale"
+									value="Male"> Masculino &nbsp; &nbsp; &nbsp; <input
+									type="radio" data-ng-model="contrato.genero" id="idFemale"
+									value="Female"> Feminino
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label>Nível Académico: <select
+									data-ng-model="contrato.academico" id="idLevel"
+									class="form-control col-md-4">
+										<option>Médio</option>
+										<option>Licenciado</option>
+										<option>Mestrado</option>
+								</select>
+								</label>
+							</div>
+							<div class="form-group col-md-4">
+								<label for="exampleInputEducation">Area de Formação:</label> <input
+									type="text" class="form-control" name="exampleInputEducation"
+									id="idEducation" placeholder="Escreva a Formação">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group  col-md-4">
+								<label for="exampleInputSkype">Email:</label> <input type="text"
+									data-ng-model="contrato.email" class="form-control"
+									id="idInputEmail" placeholder="Escreva o Skype">
+							</div>
+							<div class="form-group col-md-4">
+								<label for="exampleInputPhone">Telefone I:</label> <input
+									type="number" data-ng-model="contrato.telefone1"
+									class="form-control" id="idInputPhone1"
+									placeholder="+258 *********">
+							</div>
+							<div class="form-group  col-md-4">
+								<label for="exampleInputPhone2">Telefone II:</label> <input
+									type="number" data-ng-model="contrato.telefone2"
+									class="form-control" id="idInputPhone2"
+									placeholder="+258 *********">
+							</div>
+						</div>
+						<button type="button" class="btn btn-success m-b-sm"
+							data-toggle="modal" data-target="#myModal">Adicionar
+							Contactos de Emergência</button>
+					</div>
+
+
+
+					<ul class="pager wizard">
+						<li class="next"><a data-ng-click="next('stage1')"
+							class="btn btn-default">Seguir</a></li>
+					</ul>
+
+				</div>
+
+				<div data-ng-switch-when="stage1">
+					<div class="form-group">
+						<h4>Local de Residência</h4>
+						<br>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputNationality">Nacionalidade:</label> <input
+									type="text" class="form-control" name="Nationality"
+									id="idNationality" placeholder="Nacionalidade"
+									data-ng-model="contrato.endereco.nacionalidade">
+							</div>
+							<div class="form-group col-md-4">
+								<label for="exampleInputProvince">Província: <select
+									name="exampleInputProvince"
+									data-ng-model="contrato.endereco.provincia" id="idProvince"
+									class="form-control col-md-4">
+										<option value="maputo">Maputo</option>
+										<option value="maputoc">Maputo (Cidade)</option>
+										<option value="gaza">Gaza</option>
+										<option value="inhambane">Inhambane</option>
+										<option value="sofala">Sofala</option>
+										<option value="manica">Manica</option>
+										<option value="tete">Tete</option>
+										<option value="zambézia">Zambézia</option>
+										<option value="nampula">Nampula</option>
+										<option value="niassa">Niassa</option>
+										<option value="caboDelgado">Cabo Delgado</option>
+								</select>
+								</label>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputBirthplace">Localidade:</label> <input
+									type="text" data-ng-model="contrato.endereco.localidade"
+									class="form-control" id="idBirthplace"
+									placeholder="Escreva a Localidade">
+							</div>
+							<div class="form-group  col-md-4">
+								<label for="exampleAddress">Bairro:</label> <input type="text"
+									class="form-control" data-ng-model="contrato.endereco.bairro"
+									id="idAddress" placeholder="Nome do Bairro">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputQuarteirao">Quarteirão:</label> <input
+									type="number" class="form-control"
+									data-ng-model="contrato.endereco.quarterao" id="idQuarteirao"
+									placeholder="Nr do quarteirao">
+							</div>
+							<div class="form-group  col-md-4">
+								<label for="exampleInputCasa">N° Casa:</label> <input
+									type="number" data-ng-model="contrato.endereco.casa"
+									class="form-control" id="idCasa" placeholder="Nr da casa">
+							</div>
+						</div>
+
+						<ul class="pager wizard">
+							<li class="previous"><a data-ng-click="back('stage1')"
+								class="btn btn-default">Voltar</a></li>
+							<li class="next"><a data-data-ng-click="next('stage2')"
+								class="btn btn-default">Seguir</a></li>
+						</ul>
+					</div>
+				</div>
+
+
+				<div data-ng-switch-when="stage2">
+					<div class="form-group">
+						<h4>Dados Administrativos</h4>
+						<br>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputName">Departamento: <select
+									class="form-control col-md-4" name="exampleInputDepartament"
+									id="idDepartament">
+										<option value="#"></option>
+										<option value="#"></option>
+								</select>
+								</label>
+							</div>
+							<div class="form-group col-md-4">
+								<label>Programa: <select name="Programa" id="idProgram"
+									class="form-control col-md-4">
+										<option value="dod">DOD</option>
+										<option value="cdc">CDC</option>
+										<option value="mcsp">MCSP</option>
+										<option value="mozal">Mozal</option>
+										<option value="aidsfree">AidsFree</option>
+										<option value="tipTop">TIP TOP</option>
+								</select>
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label>Posição: <Select class="form-control col-md-4"
+									name="exampleInputPosition" id="idPosition">
+										<option value="#"></option>
+										<option value="#"></option>
+								</select>
+								</label>
+							</div>
+							<div class="form-group col-md-4">
+								<label>Categoria: <select
+									data-ng-model="contrato.categoria" id="idCategory"
+									class="form-control col-md-4">
+										<option data-ng-repeat="c in cats">{{c}}</option>
+								</select>
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputProbatorio">Período Probatório:
+									<select class="form-control col-md-4"
+									data-ng-model="contrato.periodo" id="idProbatorio">
+										<option>3 meses</option>
+										<option>6 meses</option>
+								</select>
+								</label>
+							</div>
+							<div class="form-group col-md-4">
+								<label for="exampleInputDate1">Data de Início:</label> <input
+									type="date" class="form-control"
+									data-ng-model="contrato.datainicio" id="idDateStart1"
+									placeholder="Período Probatório">
+							</div>
+							<div class="form-group col-md-4">
+								<label for="exampleInputDate1">Data de Término:</label> <input
+									type="date" class="form-control" data-ng-model="contrato.fim"
+									id="idDateEnd1" placeholder="Período Probatório">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputPhone">Experiência Profissional:</label>
+								<input type="number" class="form-control"
+									name="exampleInputTelefone" id="idPExperience"
+									placeholder="Anos">
+							</div>
+							<div class="form-group  col-md-4">
+								<label for="exampleInputSkype">Último local de trabalho:</label>
+								<input type="text" class="form-control" name="exampleInputSkype"
+									id="idLastWork" placeholder="Nome">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputPhone">Salário Base:</label> <input
+									type="number" data-ng-model="contrato.salariobase" step="0.00"
+									class="form-control" name="exampleInputTelefone" id="idSalary"
+									placeholder="Ex:xxxx.**">
+							</div>
+							<div class="form-group  col-md-4">
+								<label for="exampleInputPhone2">Salário Actual:</label> <input
+									type="number" data-ng-model="contrato.salarioactual"
+									step="0.00" class="form-control" id="idSalaryA"
+									placeholder="Ex:xxxx.**">
+							</div>
+							<div class="form-group  col-md-3">
+								<label>Nível Salarial: <select name="Programa"
+									id="idPLevel" class="form-control col-md-3">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+								</select>
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputPhone">Número de Dependentes:</label> <input
+									type="number" class="form-control" name="exampleInputTelefone"
+									id="idDependents" placeholder="Dependentes">
+							</div>
+							<div class="form-group  col-md-4">
+								<label for="exampleInputSkype">NUIT:</label> <input
+									type="number" data-ng-model="contrato.nuit"
+									class="form-control" id="idNuit" placeholder="Ex:*********">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputPhone">INSS:</label> <input
+									type="number" data-ng-model="contrato.inss"
+									class="form-control" id="idINSS" placeholder="Ex:*******">
+							</div>
+							<div class="form-group  col-md-4">
+								<label for="exampleInputPhone2">NIB:</label> <input
+									type="number" data-ng-model="contrato.nib" class="form-control"
+									id="idNIB" placeholder="Ex:***************">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label>Supervior: <select class="form-control col-md-4"
+									name="exampleInputSupervisor" id="idSupervisor">
+										<option value="#"></option>
+										<option value="#"></option>
+								</select>
+								</label>
+							</div>
+							<div class="form-group col-md-4">
+								<label>Gestor de RH: <select name="gestorRH"
+									id="idManager" class="form-control col-md-3">
+										<option value="basico">Celio Canda</option>
+										<option value="medio">Denise Alves</option>
+										<option value="superior">Ines Muhau</option>
+										<option value="medio">Milton Manicua</option>
+										<option value="superior">Paulo Selemane</option>
+								</select>
+								</label>
+							</div>
+							<div class="form-group  col-md-4">
+								<label for="exampleInputSkype">Skype:</label> <input type="text"
+									class="form-control" name="exampleInputSkype" id="idLastSkype"
+									placeholder="Skype">
+							</div>
+						</div>
+
+
+						<ul class="pager wizard">
+							<li class="previous"><a data-ng-click="back('stage2')"
+								class="btn btn-default">Voltar</a></li>
+							<li class="next"><a data-ng-click="next('stage3')"
+								class="btn btn-default">Seguir</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div data-ng-switch-when="stage3">
+					<div class="form-group">
+						<h4>Login</h4>
+						<br>
+
+						<div class="row">
+
+							<div class="form-group col-md-4">
+								<label for="exampleInputEmail">Email:</label> <input
+									type="email" class="form-control" name="exampleInputEmail"
+									id="idEmail" placeholder="Escreva o email">
+							</div>
+							<div class="form-group col-md-3">
+								<label for="exampleInputPassword1">Password:</label> <input
+									type="password" class="form-control"
+									name="exampleInputPassword1" id="exampleInputPassword1"
+									placeholder="Introduza Password">
+							</div>
+							<div class="form-group col-md-3">
+								<label for="exampleInputPassword2">Confirmarf Password:</label>
+								<input type="password" class="form-control"
+									name="exampleInputPassword2" id="exampleInputPassword2"
+									placeholder="Confirme a Password">
+							</div>
+						</div>
+
+						<ul class="pager wizard">
+							<li class="previous"><a data-ng-click="back('stage3')"
+								class="btn btn-default">Voltar</a></li>
+							<li class="next"><a data-ng-click="next('stage4')"
+								class="btn btn-default">Seguir</a></li>
+						</ul>
+					</div>
+				</div>
+				<div data-ng-switch-when="stage4">
+					<h3>Confirmar</h3>
+					<br>
+					<div class="row">
+						<div class="form-group col-md-6">
+							<h4>Dados Pessoais</h4>
+							<p>Nome: {{contrato.nome}}</p>
+							<br>
+							<p>Apelido: {{contrato.apelido}}</p>
+							<br>
+							<p>Nome: {{contrato.telefone}}</p>
+							<br>
+							<p>Nome: {{contrato.nome}}</p>
+							<button class="btn btn-default pull-left"
+								data-ng-click="back('stage1')">Editar</button>
+							<br>
+						</div>
+
+						<div class="form-group col-md-6">
+							<h4>Local de Residência</h4>
+							<p>Nome: {{contrato.nome}}</p>
+							<br>
+							<p>Apelido: {{contrato.apelido}}</p>
+							<br>
+							<p>Nome: {{contrato.telefone}}</p>
+							<br>
+							<p>Nome: {{contrato.nome}}</p>
+							<button class="btn btn-default pull-left"
+								data-ng-click="back('stage2')">Editar</button>
+							<br>
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-6">
+							<h4>Dados Administrativos</h4>
+							<p>Nome: {{contrato.nome}}</p>
+							<br>
+							<p>Apelido: {{contrato.apelido}}</p>
+							<br>
+							<p>Nome: {{contrato.telefone}}</p>
+							<br>
+							<p>Nome: {{contrato.nome}}</p>
+							<button class="btn btn-default pull-left"
+								data-ng-click="back('stage3')">Editar</button>
+							<br>
+						</div>
+					</div>
+
+					<ul class="pager wizard">
+						<li class="previous"><a data-ng-click="back('stage4')"
+							class="btn btn-default">Voltar</a></li>
+					</ul>
+					<button type="button" class="btn btn-success"
+						data-data-ng-click="create(contrato)">Guardar</button>
+
+				</div>
+
+
+
+
+			</div>
+		
+
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+						aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"
+										aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+									<h4 class="modal-title" id="myModalLabel">Contactos de
+										Emergência</h4>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<div class="row">
+											<h5>Contacto 1:</h5>
+											<div class="form-group  col-md-4">
+												<label for="exampleInputNome1">Nome:</label> <input
+													type="text" class="form-control"
+													data-ng-model="contrato.contrato.nome1" id="idInputNome1"
+													placeholder="Nome">
+											</div>
+											<div class="form-group col-md-4">
+												<label for="exampleInputTelefone1">Telefone:</label> <input
+													type="number" class="form-control"
+													data-ng-model="contrato.contrato.telefone1"
+													id="idInputTelefone1" placeholder="*********">
+											</div>
+											<div class="form-group  col-md-3">
+												<label>Parentesco: <select data-ng-model="contrato.parente1">
+														<option data-ng-repeat="p in pars">{{p}}</option>
+												</select>
+												</label>
+											</div>
+										</div>
+										<div class="row">
+											<h5>Contacto 2:</h5>
+											<div class="form-group  col-md-4">
+												<label for="exampleInputNome2">Nome:</label> <input
+													type="text" class="form-control" data-ng-model="contrato.contrato.nome2"
+													id="idInputNome2" placeholder="Nome">
+											</div>
+											<div class="form-group col-md-4">
+												<label for="exampleInputTelefone2">Telefone:</label> <input
+													type="number" data-ng-model="contrato.contrato.telefone2" class="form-control"
+													id="idInputTelefone2"
+													placeholder="*********">
+											</div>
+											<div class="form-group  col-md-3">
+												<label>Parentesco: <select data-ng-model="contrato.contrato.parente2"
+													id="idParentesco2" class="form-control col-md-4">
+														<option data-ng-repeat="d in pars">{{d}}</option>
+												</select>
+												</label>
+											</div>
+										</div>
+										<div class="row">
+											<h5>Contacto 3:</h5>
+											<div class="form-group  col-md-4">
+												<label for="exampleInputNome3">Nome:</label> <input
+													type="text" class="form-control" data-ng-model="contrato.contrato.nome3"
+													id="idInputNome3" placeholder="Nome">
+											</div>
+											<div class="form-group col-md-4">
+												<label for="exampleInputTelefone3">Telefone:</label> <input
+													type="number"  data-ng-model="contrato.contrato.telefone3" class="form-control"
+													 id="idInputTelefone3"
+													placeholder="*********">
+											</div>
+											<div class="form-group  col-md-3">
+												<label>Parentesco: <select data-ng-model="contrato.contrato.parente3"
+													id="idParentesco3" class="form-control col-md-4">
+														<option data-ng-repeat="s in pars">{{s}}</option>
+														
+												</select>
+												</label>
+											</div>
+										</div>
+
+									</div>
+									<div class="modal-footer">
+										<button type="button" data-ng-click="limpar()" class="btn btn-default" data-dismiss="modal">Fechar</button>
+										<button type="submit" class="btn btn-success" data-dismiss="modal">Adicionar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</form>
+</body>
+</html>

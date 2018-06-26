@@ -1,0 +1,113 @@
+<body>
+	<h2 style="text-align: center">Contrato Consultor</h2>	
+	
+	<h3 style="text-align: center">Relatorio Gerais</h3>
+	<br>
+	<br>
+	<div ng-hide="loading">
+		<div class="row">
+			<div class="form-group col-md-2">
+				<label>Departamentos <select
+					ng-model="search.departamento.descricao" class="form-control">
+						<option ng-repeat="d in depart" value="{{d.descricao}}">{{d.descricao}}</option>
+				</select></label>
+			</div>
+			<div class="form-group col-md-2">
+				<label>Name only <input type="search" ng-model="search.nome"
+					placeholder="Pesquise pelo nome..." class="form-control"
+					aria-label="Pesquise pelo nome"></label>
+			</div>
+		</div>
+		<label><input type="button" ng-click="exportToPdf()"
+			class="btn btn-danger" value="PDF" /> </label> <label><input
+			type="button" ng-click="limpar(search)" class="btn btn-success"
+			value="Limpar Pesquisa" /> </label>
+
+
+	</div>
+
+	<br>
+	<div class="spinner" ng-show="loading" align="center">
+		<img src="app/imgs/jhpiegoMin.png" alt="Yükleniyor..." /> <br>
+		<img src="app/imgs/load.gif" alt="Yükleniysor..." />
+	</div>
+	<br>
+	<div ng-hide="loading">
+
+		<br /> <br /> <label>Imprimir<input type="checkbox"
+			ng-model="t"><br></label><div style="text-align:right">
+			<div >
+		<label>Itens per Page<select ng-model="pageNumber">
+		<option data-ng-repeat="fatura in prestacao" value="{{fatura.pageNumber}}">{{fatura.nome}}</option>
+	</select></label>	
+		
+		</div></div>
+		<table id="customers" class="table table-hover">
+			<thead ng-show="t">
+				<tr>
+					<td colspan="18" style="text-align: left"><img
+						src="app/imgs/jhpiegoMin.png" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="18" style="text-align: right"><h5>Doc.No.:
+							{{d| date: 'ddMMyymm:ss'}}</h5></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="18" style="text-align: right"><h5>Data: {{d|
+							date: 'dd MMMM yyyy HH:mm:ss'}}</h5></td>
+				</tr>
+				<tr>
+					<td><br> <br> <br> <br> <br> <br>
+						<br></td>
+					<td colspan="8" style="text-align: center;"><h3>Contrato
+							indeterminado</h3></td>
+				</tr>
+			</thead>
+
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Posicao</th>
+					<th>Provincia</th>
+					
+					<th>Data Inicio</th>
+					<th>Data Fim</th>
+
+					<th>Gestor</th>
+					<th>departamento</th>
+					<th style="color: blue">Pronvicia</th>
+					<th style="color: blue">Distrito</th>
+					<th style="color: blue">Localidade</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr dir-paginate="item in items | itemsPerPage:pageNumber | filter:search:strict">
+					<td>{{item.nome}}</td>
+					<td>{{item.posiccao.descricao}}</td>
+					<td>{{item.endereco.provincia}}</td>
+				
+					<td>{{item.datainicio| date:'dd/MM/yyyy'}}</td>
+					<td>{{item.datafim | date:'dd/MM/yyyy'}}</td>
+					<td>{{item.gestor.descricao}}</td>
+					<td>{{item.departamento.descricao}}</td>
+						<td>{{item.profissional.provincia}}</td>
+					<td>{{item.profissional.distrito}}</td>
+					<td>{{item.profissional.localidade}}</td>
+
+				</tr>
+			</tbody>
+		</table><div class="row">
+
+			<div class="col-lg-12">
+
+				<dir-pagination-controls boundary-links="true" 
+					 auto-hide="true">
+					</dir-pagination-controls>
+			</div>
+
+		</div>
+	</div>
+</body>

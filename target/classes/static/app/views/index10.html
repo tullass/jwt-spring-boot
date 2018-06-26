@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Teste</title>
+<body>
+	<h1>contratoD</h1>
+	<form>
+
+		<label>Nome</label> <input type="text" ng-model="contrato.nome">
+		<label>Apelido</label> <input type="text" ng-model="contrato.apelido">
+		<label>Estado Civil</label> <input type="text"
+			ng-model="contrato.civil"> <label>Experiencia</label> <input
+			type="text" ng-model="contrato.experiencia"> <label>Data
+			Fim</label> <input type="range" ng-model="contrato.datafim"> <label>Data
+			Inicio</label> <input type="date" ng-model="contrato.datainicio"> <label>Email</label>
+		<input type="text" ng-model="contrato.email"> <label>Genero</label>
+		<input type="radio" ng-model="contrato.genero" value="Masculino">
+		<input type="radio" ng-model="contrato.genero" value="Feminino">
+		<br> <label>Inss</label> <input type="text"
+			ng-model="contrato.inss"> <label>Intervalo</label> <input
+			type="text" ng-model="contrato.intervalo"> <label>Nib</label>
+		<input type="text" ng-model="contrato.nib"> <label>Salario
+			Actual</label> <input type="text" ng-model="contrato.salarioactual">
+		<label>Salario Base</label> <input type="text"
+			ng-model="contrato.salariobase"> <label>Telefone</label> <input
+			type="text" ng-model="contrato.telefone1"> <label>Telefone2</label>
+		<input type="text" ng-model="contrato.telefone2">
+		<fieldset>
+			<label>Nacionalidade</label> <input type="text"
+				ng-model="contrato.endereco.nacionalidade"> <label>Provincia</label>
+			<input type="text" ng-model="contrato.endereco.provincia"> <label>Localidade</label>
+			<input type="text" ng-model="contrato.endereco.localidade"> <label>Bairro</label>
+			<input type="text" ng-model="contrato.endereco.bairro"> <label>Qtr</label>
+			<input type="text" ng-model="contrato.endereco.quarterao"> <label>Casa</label>
+			<input type="text" ng-model="contrato.endereco.casa">
+		</fieldset>
+
+		<fieldset>
+			<label>Nome1</label> <input type="text"
+				ng-model="contrato.contrato.nome1"> <label>Telefone1</label>
+			<input type="text" ng-model="contrato.contrato.telefone1"> <label>Nome2</label>
+			<input type="text" ng-model="contrato.contrato.nome2"> <label>Telefone2</label>
+			<input type="text" ng-model="contrato.contrato.telefone2"> <label>Nome3</label>
+			<input type="text" ng-model="contrato.contrato.nome3"> <label>Telefone3</label>
+			<input type="text" ng-model="contrato.contrato.telefone3">
+		</fieldset>
+		<fieldset>
+			<h1>user</h1>
+			<label>Nome</label> <input type="text"
+				ng-model="contrato.appUser.name"> <br>
+			<h1>user</h1>
+			<label>Username</label> <input type="text"
+				ng-model="contrato.appUser.username"> <br> <label
+				for="role">Role:</label> <select required multiple="multiple"
+				class="form-control" ng-model="appUser.roles" id="role" name="role">
+				<option value="ADMIN">Administrator</option>
+				<option value="USER">User</option>
+			</select> <label>PassWord</label> <input type="text"
+				ng-model="contrato.appUser.password"> <br>
+		</fieldset>
+		<br> <label for="assunt">Area Cientifica </label> <select
+			data-ng-model=contrato.areaa.id>
+			<option data-ng-repeat="fatura in areaas" value="{{fatura.id}}">{{fatura.descricao}}</option>
+		</select>{{areaa}}
+
+		<button type="button" data-ng-click="create(contrato)">Create</button>
+
+	</form>
+</body>
+</html>

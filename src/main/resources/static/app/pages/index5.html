@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Departamento</title>
+<body>
+	<h2 style="color: red">Departamento </h2>
+	<form name="formaca">
+<br><br>
+		<label>Nome</label> <input type="text" ng-model="departamento.descricao" required>
+		<br>
+		<br>
+		<button type="button" 	class="btn btn-default" ng-disabled="formaca.$invalid" data-ng-click="create(departamento)">Guardar</button>
+		<br>		<br>
+		
+		<table class="table table-hover">
+			<tr>
+				<th>Nome</th>
+				<th>Accoes</th>
+
+			</tr>
+			<tr data-ng-repeat="departamento in lista">
+				<td>{{departamento.descricao}}</td>
+
+				<td>
+					<button type="button" class="btn btn-success"  data-ng-click="alterar(departamento)">Alterar</button>
+					<!-- 					<button type="button" data-ng-click="deletar(departamento)">Excluir</button> -->
+				</td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

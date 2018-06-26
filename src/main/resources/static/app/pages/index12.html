@@ -1,0 +1,190 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html> -->
+<!-- <head> -->
+<!-- <meta charset="UTF-8"> -->
+<!-- <title>Teste</title> -->
+<!-- <body> -->
+<!-- 	<h1>contratoD</h1> -->
+<!-- 	<form name="multiStepForm" ng-cloak> -->
+<!-- 				<div class="animate-switch-container" ng-switch on="stage"> -->
+<!-- 			<div> -->
+<!-- 				<div class="row"> -->
+<!-- 					<div class="col-md-12"> -->
+<!-- 						<button type="button" class="btn btn-default" -->
+<!-- 							ng-click="next('stage1')">Inicio</button> -->
+<!-- 					</div> -->
+<!-- 					Name ass saved: {{contrato.nome}} -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<div ng-switch-when="stage1"> -->
+<!-- 				<div class="row"> -->
+
+<!-- 					<h3>Dados Pessoais</h3> -->
+<!-- 					<label>Nome</label> <input type="text" ng-model="contrato.nome"> -->
+<!-- 					<label>Apelido</label> <input type="text" -->
+<!-- 						ng-model="contrato.apelido"> -->
+<!-- <label>Estado civil</label> <select ng-model="contrato.civil"> -->
+<!-- 		<option ng-repeat="a in generos">{{a}}</option> -->
+		
+<!-- 		</select> -->
+
+<!--  <label>Experiencia</label> -->
+<!-- 					<input type="text" ng-model="contrato.experiencia">  -->
+<!-- 					<label>Email</label> <input type="text" ng-model="contrato.email"> -->
+<!-- 					<label>Genero</label> <input type="radio" -->
+<!-- 						ng-model="contrato.genero" value="Masculino"> <input -->
+<!-- 						type="radio" ng-model="contrato.genero" value="Feminino"> -->
+<!-- 					<br> <label>Inss</label> <input type="text" -->
+<!-- 						ng-model="contrato.inss"> <label>Intervalo</label> <input -->
+<!-- 						type="text" ng-model="contrato.intervalo"> <label>Nib</label> -->
+<!-- 					<input type="text" ng-model="contrato.nib"> <label>Salario -->
+<!-- 						Actual</label> <input type="text" ng-model="contrato.salarioactual"> -->
+<!-- 					<label>Salario Base</label> <input type="text" -->
+<!-- 						ng-model="contrato.salariobase"> <label>Telefone</label> <input -->
+<!-- 						type="text" ng-model="contrato.telefone1"> <label>Telefone2</label> -->
+<!-- 					<input type="text" ng-model="contrato.telefone2"> -->
+<!-- 					<button type="button" class="btn btn-info" ng-click="back('')">Back</button> -->
+<!-- 					<button type="button" class="btn btn-primary" -->
+<!-- 						ng-click="next('stage2')">Next</button>				 -->
+<!-- 								<button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Adicionar Contactos de Emergência</button> -->
+                                   
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<div ng-switch-when="stage2"> -->
+<!--           <div class="form-group"> -->
+<!--             	<label>Nacionalidade</label> <input type="text" -->
+<!-- 				ng-model="contrato.endereco.nacionalidade"> <label>Provincia</label> -->
+<!-- 			<input type="text" ng-model="contrato.endereco.provincia"> <label>Localidade</label> -->
+<!-- 			<input type="text" ng-model="contrato.endereco.localidade"> <label>Bairro</label> -->
+<!-- 			<input type="text" ng-model="contrato.endereco.bairro"> <label>Qtr</label> -->
+<!-- 			<input type="text" ng-model="contrato.endereco.quarterao"> <label>Casa</label> -->
+<!-- 			<input type="text" ng-model="contrato.endereco.casa"> -->
+	
+<!--           </div> -->
+<!--           <button type="button" class="btn btn-info" ng-click="back('stage1')">Back</button> -->
+<!--           <button type="button" class="btn btn-primary" ng-click="next('stage3')">Next</button>           -->
+<!--         </div> -->
+<!--         <div data-ng-switch-when="stage3"> -->
+<!--        <h2>dd</h2> -->
+       
+<!--          <button type="button" class="btn btn-info" ng-click="back('stage3')">Back</button> -->
+<!--          <button type="button" class="btn btn-primary" ng-click="next('stage4')">Next</button> -->
+          
+        
+        
+<!--         </div> -->
+<!--          <div data-ng-switch-when="stage4"> -->
+<!--        <h2>Login</h2> -->
+       
+<!--          <button type="button" class="btn btn-info" ng-click="back('stage3')">Back</button> -->
+<!--          <button type="button" class="btn btn-primary" ng-click="next('stage5')">Next</button> -->
+          
+        
+        
+<!--         </div> -->
+<!--         <div data-ng-switch-when="stage5"> -->
+<!--        <h2>Confirma</h2> -->
+<!-- 				<p>Nome: {{contrato.nome}}</p> -->
+<!-- 				<br> -->
+<!-- 				<p>Apelido: {{contrato.apelido}}</p> -->
+<!-- 				<br> -->
+<!-- 				<p>Nome: {{contrato.telefone}}</p> -->
+<!-- 				<br> -->
+<!-- 				<p>Nome: {{contrato.nome}}</p> -->
+<!-- 				<br> -->
+
+<!-- 				<button type="button" class="btn btn-info" ng-click="back('stage3')">Back</button> -->
+<!-- 				<button type="button" data-ng-click="create(contrato)">Create</button> -->
+
+
+
+<!-- 			</div> -->
+        
+<!--           <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> -->
+<!--                                         <div class="modal-dialog"> -->
+<!--                                             <div class="modal-content"> -->
+<!--                                                 <div class="modal-header"> -->
+<!--                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+<!--                                                     <h4 class="modal-title" id="myModalLabel">Contactos de Emergência</h4> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="modal-body"> -->
+<!--                                                         <div class="form-group"> -->
+<!--                                                             <div class="row"> -->
+<!--                                                             <h5>Contacto 1:</h5> -->
+<!-- 																<div class="form-group  col-md-4"> -->
+<!--                                                                     <label for="exampleInputNome1">Nome:</label> -->
+<!--                                                                     <input type="text" class="form-control" ng-model="contrato.contrato.nome1" id="idInputNome1" placeholder="Nome" > -->
+<!--                                                                 </div> -->
+<!-- 									<div class="form-group col-md-4"> -->
+<!-- 										<label for="exampleInputTelefone1">Telefone:</label> <input -->
+<!-- 											type="number" class="form-control" -->
+<!-- 											ng-model="contrato.contrato.telefone1" id="idInputTelefone1" -->
+<!-- 											placeholder="*********"> -->
+<!-- 									</div> -->
+<!-- 									<div class="form-group  col-md-3"> -->
+<!-- 										<label>Parentesco</label> <select -->
+<!-- 											ng-model="contrato.contrato.parente1"> -->
+<!-- 											<option ng-repeat="a in pars">{{a}}</option> -->
+
+<!-- 										</select> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="row"> -->
+<!-- 									<h5>Contacto 2:</h5> -->
+<!-- 									<div class="form-group  col-md-4"> -->
+<!-- 										<label for="exampleInputNome2">Nome:</label> <input -->
+<!-- 											type="text" class="form-control" -->
+<!-- 											ng-model="contrato.contrato.nome2" id="idInputNome1" -->
+<!-- 											placeholder="Nome"> -->
+<!-- 									</div> -->
+<!-- 									<div class="form-group col-md-4"> -->
+<!-- 										<label for="exampleInputTelefone2">Telefone:</label> <input -->
+<!-- 											type="number" class="form-control" -->
+<!-- 											ng-model="contrato.contrato.telefone2" -->
+<!-- 											name="exampleInputTelefone2" id="idInputTelefone2" -->
+<!-- 											placeholder="*********"> -->
+<!-- 									</div> -->
+<!-- 									<div class="form-group  col-md-3"> -->
+<!-- 										<label>Parentesco</label> <select -->
+<!-- 											ng-model="contrato.contrato.parente2"> -->
+<!-- 											<option ng-repeat="a in pars">{{a}}</option> -->
+
+<!-- 										</select> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="row"> -->
+<!--                                                         <h5>Contacto 3:</h5> -->
+<!--                                                             <div class="form-group  col-md-4"> -->
+<!--                                                                     <label for="exampleInputNome3">Nome:</label> -->
+<!--                                                                     <input type="text" class="form-control"  ng-model="contrato.contrato.nome3" name="exampleInputNome3" id="idInputNome3" placeholder="Nome" > -->
+<!--                                                                 </div> -->
+<!--                                                                 <div class="form-group col-md-4"> -->
+<!--                                                                     <label for="exampleInputTelefone3">Telefone:</label> -->
+<!--                                                                     <input type="number" class="form-control"  ng-model="contrato.contrato.telefone3" name="exampleInputTelefone3" id="idInputTelefone3" placeholder="*********"> -->
+<!--                                                                 </div> -->
+<!-- 																<div class="form-group  col-md-3"> -->
+<!--                                                                     		<label>Parentesco</label> <select ng-model="contrato.contrato.parente3"> -->
+<!-- 											<option ng-repeat="a in pars">{{a}}</option> -->
+
+<!-- 										</select> -->
+<!-- 									</div> -->
+<!--                                                         </div> -->
+                                                      
+<!--                                                 </div> -->
+<!--                                                 <div class="modal-footer"> -->
+<!--                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Add</button> -->
+<!--                                                 </div> -->
+<!--                                                </div>  -->
+<!--                                        		</div> -->
+<!--                                     	</div> -->
+<!--                                     </div> -->
+        
+        
+        
+        
+        
+        
+<!-- 				</div> -->
+<!-- 	</form> -->
+<!-- </body> -->
+<!-- </html> -->

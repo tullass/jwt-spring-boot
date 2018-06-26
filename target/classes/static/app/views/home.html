@@ -1,0 +1,96 @@
+
+<div id="main-wrapper">
+	<div class="row">
+		
+			
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-white">
+				<div class="panel-heading clearfix">
+					<h4 class="panel-title">Contrato Consultor</h4>
+				</div>
+				<div class="panel-body">
+					<table class="table table-bordered">
+
+						<tr>
+							<th>Nome</th>
+
+							<th>Data Termino</th>
+
+							<th>Tempo restante</th>
+						</tr>
+						<tbody>
+							<tr ng-repeat="data in record  | limitTo:maximo | filter:dateFilter  track by $index">
+
+								<td>{{data.nome}}</td>
+
+								<td>{{data.datafim | date: 'dd/MM/yyyy'}}</td>
+								<td style="color: red">{{getExp(data.datafim)}}</td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="panel panel-white">
+				<div class="panel-heading clearfix">
+					<h4 class="panel-title">Contrato P/Servico</h4>
+				</div>
+				<div class="panel-body">
+					<table class="table table-bordered">
+
+						<tr>
+							<th>Nome</th>
+
+							<th>Data Fim</th>
+
+							<th>Tempo restante</th>
+						</tr>
+						<tbody>
+							<tr ng-repeat="data in presta |limitTo:maximo | filter:dateFilter  track by $index">
+
+								<td>{{data.nome}}</td>
+
+								<td>{{data.datafim | date: 'dd/MM/yyyy'}}</td>
+								<td style="color: red">{{getExp(data.datafim)}}</td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</div><div class="col-md-6">
+			<div class="panel panel-white">
+				<div class="panel-heading clearfix">
+					<h4 class="panel-title">Contrato Indeterminado</h4>
+				</div>
+				<div class="panel-body">
+					<table class="table table-bordered">
+
+						<tr>
+							<th>Nome</th>
+
+							<th>Data Fim</th>
+
+							<th>Fim Periodo Probatorio</th>
+						</tr>
+						<tbody>
+							<tr ng-repeat="data in records |limitTo:maximo  | filter:dateFilter track by $index">
+
+								<td>{{data.nome}}</td>
+
+								<td>{{data.datafim | date: 'dd/MM/yyyy'}}</td>
+								<td style="color: red">{{getExp(data.datafim)}}</td>
+
+							</tr>
+						</tbody>
+					</table>
+
+
+
+
+				</div>
+			</div>
+	</div>
+	<!-- Row -->

@@ -1,0 +1,69 @@
+
+<head>
+<meta charset="UTF-8">
+<title>Prestacao Periodo</title>
+</head>
+<br>
+<br>
+<body>
+	
+	<h3 >Alerta Terminoooo</h3>	<br>
+	<input type="text" ng-model="search.nome" placeholder="Pesquise pelo nome..."
+		aria-label="Pesquise pelo nome" />
+
+	<button ng-click="exportToPdf()" class="btn btn-danger btn-rounded"
+		ng-show="t">PDF</button>
+	<br>
+	<div class="content">
+		<br> <label>Imprimir<input type="checkbox" ng-model="t"><br></label>
+
+		<table id="customers" class="table table-hover">
+			<thead ng-show="t">
+				<tr>
+					<td colspan="18" style="text-align: left"><img
+						src="app/imgs/jhpiegoMin.png" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="8" style="text-align: right"><h5>Doc.No.:
+							{{d| date: 'ddMMyymm:ss'}}</h5></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="8" style="text-align: right"><h5>Data: {{d|
+							date: 'dd MMMM yyyy HH:mm:ss'}}</h5></td>
+				</tr>
+				<tr>
+					<td><br> <br> <br> <br> <br> <br>
+						<br></td>
+					<td colspan="4" style="text-align: center;"><h3>Contrato
+							Indeterminado Periodo Probatorio</h3></td>
+							
+							
+				</tr>
+			</thead>
+			<tr>
+				<th >Nome</th>
+				<th >Periodo Probatorio</th>
+
+				<th >Data Inicio</th>
+				<th >Data Fim</th>
+
+				<th>Tempo restante</th>
+			</tr>
+			<tbody>
+				<tr ng-repeat="data in produceList | filter:dateFilter | filter:search:strict">
+					<td>{{data.nome}}</td>
+					<td>{{data.periodo}}</td>
+
+					<td>{{data.datainicio | date: 'dd MMMM yyyy'}}</td>
+					<td>{{data.datafim | date: 'dd/MM/yyyy'}}</td>
+					<td style="color: red">{{getExp(data.datafim)}}</td>
+
+				</tr>
+			</tbody>
+		</table>
+		<br>
+	</div>
+{{listap}}
+</body>
